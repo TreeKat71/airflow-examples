@@ -1,6 +1,7 @@
 import time
 from builtins import range
 from pprint import pprint
+from datetime import datetime
 
 from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
@@ -12,6 +13,7 @@ default_args = {
 dag = DAG(
     dag_id='example_python_operator',
     default_args=default_args,
+    start_date=datetime(1989, 6, 4),
     schedule_interval=None,
     tags=['example']
 )
